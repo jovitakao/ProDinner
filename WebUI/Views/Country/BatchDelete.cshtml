@@ -1,0 +1,10 @@
+﻿@model BatchDeleteConfirmInput
+@using (Html.BeginForm())
+{
+    foreach (var id in Model.Ids)
+    {
+        <input type="hidden" name="ids" value="@id"/>
+    }
+}
+
+Sure you want to delete selected items ?

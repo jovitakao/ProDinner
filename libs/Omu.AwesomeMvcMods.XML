@@ -1,0 +1,184 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Omu.AwesomeMvcMods</name>
+    </assembly>
+    <members>
+        <member name="T:Omu.AwesomeMvcMods.Helpers.AwesomeModExtensions">
+            <summary>
+            ASP.net MVC Awesome mod extensions
+            </summary>
+        </member>
+        <member name="T:Omu.AwesomeMvcMods.Helpers.ColumnModCfg">
+            <summary>
+            Column mods config
+            </summary>
+        </member>
+        <member name="M:Omu.AwesomeMvcMods.Helpers.ColumnModCfg.#ctor(Omu.AwesomeMvc.Column)">
+            <summary>
+            
+            </summary>
+            <param name="column"></param>
+        </member>
+        <member name="M:Omu.AwesomeMvcMods.Helpers.ColumnModCfg.Autohide(System.Int32)">
+            <returns></returns>
+            <summary>
+            hide column on small screens, or when resizing the browser (should be used with columns selector mod)
+            </summary>
+            <param name="order">hide order ( greater number - last to be hidden, 0 - no autohide, lesser number - first to be hidden ) </param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvcMods.Helpers.ColumnModCfg.NoAutohide">
+            <summary>
+            disable autohide for this column, use when setting autohide for all columns using grid ColumnsAutohide grid mod
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvcMods.Helpers.ColumnModCfg.Nohide">
+            <summary>
+            use to disable hiding of the column from the columns selector, it will also disable autohiding
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvcMods.Helpers.ColumnModCfg.Inline``1(Omu.AwesomeMvc.IAwesomeHelper{``0},System.String)">
+            <summary>
+            set inline format for the column; value from valProp is used to replace #Value in the format
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="helper">awesome editor helper</param>
+            <param name="valProp">grid model property to get value from, when not set will use Column.Bind; </param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvcMods.Helpers.ColumnModCfg.Inline(System.String,System.String,System.String)">
+            <summary>
+            set inline format for the column; value from valProp is used to replace #Value in the format
+            </summary>
+            <param name="format">editor string format, #Value and #Prefix will be replaced, prefix is used for unique ids </param>
+            <param name="valProp">grid model property to get value from, when not set will use Column.Bind</param>
+            <param name="modelProp">viewmodel property to match in the edit/create action, when not set valProp will be used, used for validation only here, you set the input name in the string format</param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvcMods.Helpers.ColumnModCfg.InlineId(System.String,System.String)">
+            <summary>
+            Inline hidden input for Id column, will use "Id" as name if bind or valprop is not specified
+            </summary>
+            <param name="valProp">grid model property to get value from, when not set will use Column.Bind</param>
+            <param name="modelProp">viewmodel property to match in the edit/create action, when not set valProp will be used</param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvcMods.Helpers.ColumnModCfg.InlineBool(System.String,System.String,System.String)">
+            <summary>
+            Inline checkbox, by default will use column.Bind + "Checked" for valueProp and column.Bind for modelProp
+            </summary>
+            <param name="modelProp">viewmodel property to match in the edit/create action, when not set valProp will be used</param>
+            <param name="valProp">grid model property to get value from, when not set will use Column.Bind</param>
+            <param name="cssClass">css class for the checkbox input</param>
+            <returns></returns>
+        </member>
+        <member name="T:Omu.AwesomeMvcMods.Helpers.GridModCfg">
+            <summary>
+            Grid mods configuration
+            </summary>
+        </member>
+        <member name="M:Omu.AwesomeMvcMods.Helpers.GridModCfg.InfiniteScroll">
+            <summary>
+            automatically go to next/prev page when scrolling to the end/beginning of the page
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvcMods.Helpers.GridModCfg.PageInfo">
+            <summary>
+            add page info ( page 1 of 75 ) in the right bottom corner of the grid
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvcMods.Helpers.GridModCfg.AutoMiniPager">
+            <summary>
+            automatically switch the pager to a more compact version on smaller screens, or when resizing the browser to smaller size
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvcMods.Helpers.GridModCfg.PageSize">
+            <summary>
+            add page size selector 
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvcMods.Helpers.GridModCfg.ColumnsSelector">
+            <summary>
+            add columns selector dropdown
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvcMods.Helpers.GridModCfg.ColumnsAutohide">
+            <summary>
+            Autohide columns
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvcMods.Helpers.GridModCfg.InlineEdit(System.String,System.String)">
+            <summary>
+            set Inline editing urls
+            </summary>
+            <param name="createUrl"></param>
+            <param name="editUrl"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Omu.AwesomeMvcMods.Helpers.OdropdownCfg">
+            <summary>
+            Odropdown config
+            </summary>
+        </member>
+        <member name="M:Omu.AwesomeMvcMods.Helpers.OdropdownCfg.InLabel(System.String)">
+            <summary>
+            label text in front of the caption/selected item text
+            </summary>
+            <param name="o"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvcMods.Helpers.OdropdownCfg.Caption(System.String)">
+            <summary>
+            caption when no item is selected
+            </summary>
+            <param name="o"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvcMods.Helpers.OdropdownCfg.AutoSelectFirst">
+            <summary>
+            autoselect first item on load when no value is matched (change will be triggered)
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvcMods.Helpers.OdropdownCfg.NoSelectClose">
+            <summary>
+            don't close dropdown on item select
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Omu.AwesomeMvcMods.Helpers.TimePickerCfg">
+            <summary>
+            TimePicker mod configuration
+            </summary>
+        </member>
+        <member name="M:Omu.AwesomeMvcMods.Helpers.TimePickerCfg.Caption(System.String)">
+            <summary>
+            caption for when there's no value
+            </summary>
+            <param name="o"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvcMods.Helpers.TimePickerCfg.AutoSelectFirst">
+            <summary>
+            autoselect first item on load when no value is matched (change will be triggered)
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Omu.AwesomeMvcMods.Helpers.TimePickerCfg.Step(System.Int32)">
+            <summary>
+            step in minutes
+            </summary>
+            <param name="o"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

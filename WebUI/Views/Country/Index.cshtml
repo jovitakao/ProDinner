@@ -1,0 +1,66 @@
+﻿@{
+    ViewBag.Title = "Countries";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>@Mui.Country</h2>
+@Html.InitCrudPopupsForGrid("CountryGrid", "Country", 200)
+
+@Html.Awe().InitPopupForm().Name("deleteBatch").Url(Url.Action("BatchDelete")).Success("reload").Height(200).Modal(true)
+@Html.Awe().InitCall("restoreBatch").Url(Url.Action("BatchRestore")).Success("reload")
+
+<div class="bar">
+    <div class="fr">
+        @(Html.Awe().TextBox("txtSearch").Placeholder(Mui.Search).CssClass("searchtxt"))
+    </div>
+
+    <button type="button" onclick="awe.open('createCountryGrid')" class="awe-btn mbtn">@Mui.Create</button>
+    <button type="button" onclick="batchDel()" class="awe-btn mbtn">@Mui.Delete</button>
+    
+    @if (WebUtils.IsUserAdmin())
+    {
+        <button type="button" onclick=" batchRestore() " class="awe-btn mbtn">Restore</button>
+    }
+</div>
+
+<script>
+    function getSelection() {
+        return $('#CountryGrid').find('.awe-row.awe-selected').map(function (_, row) {
+                return $(row).data('model').Id;
+            }).get();
+    }
+    
+    function batchRestore() {
+        var ids = getSelection();
+        if(ids.length)
+        awe.oc('restoreBatch', { params: { ids: ids } });
+    }
+
+    function batchDel() {
+        var ids = getSelection();
+        if(ids.length)
+        awe.open('deleteBatch', { params: { ids: ids } });
+    }
+    
+    function reload() {
+        $('#CountryGrid').data('api').load();
+    }
+    
+    function isDelFormat(o) {
+        return o.IsDeleted ? '@Mui.Yes' : '@Mui.No';
+    }
+</script>
+
+@(Html.Awe().Grid("CountryGrid")
+      .Url(Url.Action("GridGetItems"))
+      .Parent("txtSearch")
+      .Persistence(Persistence.Session)
+      .Selectable(SelectionType.Multicheck)
+      .Height(300)
+      .Groupable(false)
+      .SingleColumnSort(true)
+      .Columns(
+          new Column{ClientFormat = "<div class='chkbox'></div>", Width = 38},
+          new Column{Name = "Id", Width = 70},
+          new Column{Name = "Name"},
+          new Column{Name = "IsDeleted", Width = 100, ClientFormatFunc = "isDelFormat", Hidden = !WebUtils.IsUserAdmin(), Header = "Deleted"},
+          new Column{ClientFormat = GridUtils.EditFormat("editCountryGrid"), Width = 50}))
