@@ -26,6 +26,7 @@
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
     <TargetFrameworkProfile />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -254,6 +255,60 @@
     <Content Include="Content\themes\wui\mods.css" />
     <Content Include="Content\themes\wui\pm.png" />
     <Content Include="Content\themes\wui\pm3.png" />
+    <Content Include="pictures\Meals\0.jpg" />
+    <Content Include="pictures\Meals\1.jpg" />
+    <Content Include="pictures\Meals\10.jpg" />
+    <Content Include="pictures\Meals\11.jpg" />
+    <Content Include="pictures\Meals\12.jpg" />
+    <Content Include="pictures\Meals\13.jpg" />
+    <Content Include="pictures\Meals\14.jpg" />
+    <Content Include="pictures\Meals\15.jpg" />
+    <Content Include="pictures\Meals\16.jpg" />
+    <Content Include="pictures\Meals\17.jpg" />
+    <Content Include="pictures\Meals\2.jpg" />
+    <Content Include="pictures\Meals\3.jpg" />
+    <Content Include="pictures\Meals\4.jpg" />
+    <Content Include="pictures\Meals\5.jpg" />
+    <Content Include="pictures\Meals\6.jpg" />
+    <Content Include="pictures\Meals\7.jpg" />
+    <Content Include="pictures\Meals\8.jpg" />
+    <Content Include="pictures\Meals\9.jpg" />
+    <Content Include="pictures\Meals\m0.jpg" />
+    <Content Include="pictures\Meals\m1.jpg" />
+    <Content Include="pictures\Meals\m10.jpg" />
+    <Content Include="pictures\Meals\m11.jpg" />
+    <Content Include="pictures\Meals\m12.jpg" />
+    <Content Include="pictures\Meals\m13.jpg" />
+    <Content Include="pictures\Meals\m14.jpg" />
+    <Content Include="pictures\Meals\m15.jpg" />
+    <Content Include="pictures\Meals\m16.jpg" />
+    <Content Include="pictures\Meals\m17.jpg" />
+    <Content Include="pictures\Meals\m2.jpg" />
+    <Content Include="pictures\Meals\m3.jpg" />
+    <Content Include="pictures\Meals\m4.jpg" />
+    <Content Include="pictures\Meals\m5.jpg" />
+    <Content Include="pictures\Meals\m6.jpg" />
+    <Content Include="pictures\Meals\m7.jpg" />
+    <Content Include="pictures\Meals\m8.jpg" />
+    <Content Include="pictures\Meals\m9.jpg" />
+    <Content Include="pictures\Meals\s0.jpg" />
+    <Content Include="pictures\Meals\s1.jpg" />
+    <Content Include="pictures\Meals\s10.jpg" />
+    <Content Include="pictures\Meals\s11.jpg" />
+    <Content Include="pictures\Meals\s12.jpg" />
+    <Content Include="pictures\Meals\s13.jpg" />
+    <Content Include="pictures\Meals\s14.jpg" />
+    <Content Include="pictures\Meals\s15.jpg" />
+    <Content Include="pictures\Meals\s16.jpg" />
+    <Content Include="pictures\Meals\s17.jpg" />
+    <Content Include="pictures\Meals\s2.jpg" />
+    <Content Include="pictures\Meals\s3.jpg" />
+    <Content Include="pictures\Meals\s4.jpg" />
+    <Content Include="pictures\Meals\s5.jpg" />
+    <Content Include="pictures\Meals\s6.jpg" />
+    <Content Include="pictures\Meals\s7.jpg" />
+    <Content Include="pictures\Meals\s8.jpg" />
+    <Content Include="pictures\Meals\s9.jpg" />
     <Content Include="Scripts\proutils.js" />
     <Compile Include="Utils\WebUtils.cs" />
     <Compile Include="ViewModels\Attributes\MultiMaxLenValidationAttribute.cs" />
@@ -345,12 +400,12 @@
     <Content Include="Views\CountryIdLookup\item.cshtml" />
     <Content Include="Views\Meal\ChangePicture.ascx" />
     <Content Include="Views\Country\BatchDelete.cshtml" />
-    <None Include="Views\Shared\doghelp.cshtml" />
+    <Content Include="Views\Shared\doghelp.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Password.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\TimePickerm.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Duration.cshtml" />
-    <None Include="Views\Shared\EditorTemplates\TinyMCE.cshtml" />
-    <None Include="Views\Shared\login.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\TinyMCE.cshtml" />
+    <Content Include="Views\Shared\login.cshtml" />
     <Content Include="Views\User\Create.cshtml" />
     <Content Include="Views\Country\Index.cshtml" />
     <Content Include="Views\Chef\Index.cshtml" />
@@ -386,11 +441,7 @@
     <Content Include="Views\Shared\ListItems\Dinner.cshtml" />
     <Content Include="Views\User\Index.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-    <Folder Include="pictures\Meals\" />
-    <Folder Include="pictures\temp\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\Core\Core.csproj">
       <Project>{F668A08B-1888-468B-BA3F-9EE5513108CE}</Project>
@@ -474,6 +525,12 @@
       <SubType>Code</SubType>
     </Content>
     <Content Include="Views\Shared\EditorTemplates\TimePicker.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="pictures\temp\.gitkeep" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\errorlogs\.gitkeep" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
